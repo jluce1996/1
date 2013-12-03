@@ -49,28 +49,21 @@ namespace PizzaGuy
                 case Direction.LEFT:
 
                     newTarget += new Vector2(-32, 0);
-
                     break;
 
                 case Direction.RIGHT:
 
                     newTarget += new Vector2(32, 0);
-
-
                     break;
 
                 case Direction.UP:
 
                     newTarget += new Vector2(0, -32);
-
-
                     break;
 
                 case Direction.DOWN:
 
                     newTarget += new Vector2(0, 32);
-
-
                     break;
             }
 
@@ -78,13 +71,11 @@ namespace PizzaGuy
             {
                 return true;
             }
-
             return false;
         }
 
         public virtual void UpdateDirection()
         {
-
             switch (direction)
             {
                 case Direction.LEFT:
@@ -92,7 +83,6 @@ namespace PizzaGuy
                     target = location + new Vector2(-32, 0);
                     velocity = new Vector2(-speed, 0);
                     Rotation = -MathHelper.PiOver2;
-
                     break;
 
                 case Direction.RIGHT:
@@ -100,7 +90,6 @@ namespace PizzaGuy
                     target = location + new Vector2(32, 0);
                     velocity = new Vector2(speed, 0);
                     Rotation = MathHelper.PiOver2;
-
                     break;
 
                 case Direction.UP:
@@ -108,7 +97,6 @@ namespace PizzaGuy
                     target = location + new Vector2(0, -32);
                     velocity = new Vector2(0, -speed);
                     Rotation = 0;
-
                     break;
 
                 case Direction.DOWN:
@@ -116,16 +104,12 @@ namespace PizzaGuy
                     target = location + new Vector2(0, 32);
                     velocity = new Vector2(0, speed);
                     Rotation = MathHelper.Pi;
-
                     break;
             }
-
-
         }
 
         public override void Update(GameTime gameTime)
         {
-
             if (velocity.X > 0 && location.X >= target.X ||
                 velocity.X < 0 && location.X <= target.X ||
                 velocity.Y > 0 && location.Y >= target.Y ||
@@ -143,10 +127,7 @@ namespace PizzaGuy
                 {
                     UpdateDirection();
                 }
-
             }
-
-
             base.Update(gameTime);
         }
 
@@ -154,6 +135,5 @@ namespace PizzaGuy
         {
             base.Draw(spriteBatch);
         }
-
     }
 }
